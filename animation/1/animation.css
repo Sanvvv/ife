@@ -1,0 +1,14 @@
+.menu {
+  transition: width 0.3s ease;
+  background: lightblue;
+  width: 0;
+  height: 3px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 5px;
+}
+
+.menu-animation {
+  width: 100%;
+}

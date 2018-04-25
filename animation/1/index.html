@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="animation.css">
+  <style>
+    .container {
+      margin-top: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container span {
+      display: inline-block;
+      position: relative;
+      font-size: 24px;
+      padding: 0 2px;
+    }
+
+    .container button {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+      <span>前端学院
+        <div class="menu"></div>
+      </span>
+      <button onclick="toggleMenu()">切换样式</button>
+  </div>
+  <script>
+      var menu = document.querySelector('.menu');
+  
+      function toggleMenu() {
+        toggleClass(menu, 'menu-animation');
+      }
+  
+      function toggleClass(el, className) {
+        if (el.classList.contains(className)) {
+          el.classList.remove(className);
+        } else {
+          el.classList.add(className);
+        }
+      }
+    </script>
+</body>
+</html>
