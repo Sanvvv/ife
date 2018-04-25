@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="animation.css">
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      margin-top: 100px;
+    }
+    .wrap {
+      width: 250px;
+      height: 350px;
+    }
+    .face,
+    .back {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="wrap">
+        <img class="back rotate-3d" src="反面.jpg" alt="back">
+        <img class="face rotate-3d" src="正面.jpg" alt="face">
+    </div>
+  </div>
+</body>
+</html>
