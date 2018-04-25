@@ -1,18 +1,21 @@
-.face {
-  transition: all 0.25s linear 0.25s;
+.container {
+  perspective: 1000px;
+}
+
+.container:hover .wrap {
+  transform: rotateY(180deg);
+}
+
+.wrap {
+  transition: all 0.5s linear;
+  transform-style: preserve-3d;
+}
+
+.face, .back {
+  position: absolute;
+  backface-visibility: hidden;
 }
 
 .back {
-  transform: rotateY(90deg);
-  transition: all 0.25s linear;
-}
-
-.wrap:hover .face {
-  transform: rotateY(90deg);
-  transition: all 0.25s linear;
-}
-
-.wrap:hover .back {
   transform: rotateY(180deg);
-  transition: all 0.25s linear 0.25s;
 }
