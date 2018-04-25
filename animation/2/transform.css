@@ -1,0 +1,39 @@
+.transform1 {
+  -webkit-transform: skew(30deg);
+  -moz-transform: skew(30deg);
+  -ms-transform: skew(30deg);
+  -o-transform: skew(30deg);
+  transform: skew(30deg);
+}
+
+.transform2 {
+  -webkit-transform: scaleX(0.5);
+  -moz-transform: scaleX(0.5);
+  -ms-transform: scaleX(0.5);
+  -o-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+
+.transform3 {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.transform4 {
+  -webkit-transform: translate(10px, 20px);
+  -moz-transform: translate(10px, 20px);
+  -ms-transform: translate(10px, 20px);
+  -o-transform: translate(10px, 20px);
+  transform: translate(10px, 20px);
+}
+
+.transform5 {
+  -webkit-transform: skewX(15deg) scaleX(0.6) scaleY(1.8) rotate(50deg) translate(10px, 35px);
+  -moz-transform: skewX(15deg) scaleX(0.6) scaleY(1.8) rotate(50deg) translate(10px, 35px);
+  -ms-transform: skewX(15deg) scaleX(0.6) scaleY(1.8) rotate(50deg) translate(10px, 35px);
+  -o-transform: skewX(15deg) scaleX(0.6) scaleY(1.8) rotate(50deg) translate(10px, 35px);
+  transform: skewX(15deg) scaleX(0.6) scaleY(1.8) rotate(50deg) translate(10px, 35px);
+}
