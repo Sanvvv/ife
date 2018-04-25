@@ -35,5 +35,5 @@
   -moz-transform: skewX(15deg) scaleX(0.6) scaleY(1.8) rotate(50deg) translate(10px, 35px);
   -ms-transform: skewX(15deg) scaleX(0.6) scaleY(1.8) rotate(50deg) translate(10px, 35px);
   -o-transform: skewX(15deg) scaleX(0.6) scaleY(1.8) rotate(50deg) translate(10px, 35px);
-  transform: skewX(15deg) scaleX(0.6) scaleY(1.8) rotate(50deg) translate(10px, 35px);
+  transform: skewX(20deg) scaleX(0.75) scaleY(1.8) rotate(50deg) translate(10px, 30px);
 }
