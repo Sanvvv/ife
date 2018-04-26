@@ -1,0 +1,42 @@
+<template>
+  <div>
+      <div class="block" style="background: {{color}}" on-click="toggleStyle()"></div>
+      <div class="block {{isBlue ? 'blue' : ''}}" on-click="toggleClass()"></div>
+  </div>
+</template>
+
+<script>
+  export default {
+    initData: function () {
+      return {
+        color: 'red',
+        isBlue: false
+      };
+    },
+    toggleStyle: function () {
+      let color = this.data.get('color');
+      if (color === 'red') {
+        this.data.set('color', 'blue');
+      } else {
+        this.data.set('color', 'red');
+      }
+    },
+    toggleClass: function () {
+      let isBlue = this.data.get('isBlue');
+      this.data.set('isBlue', !isBlue);
+    }
+  }
+</script>
+
+<style>
+  .block {
+    background:red;
+    width:100px;
+    height:100px;
+    margin: 10px;
+  }
+
+  .blue {
+    background: blue;
+  }
+</style>
