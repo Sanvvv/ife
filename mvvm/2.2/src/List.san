@@ -1,22 +1,24 @@
 <template>
   <div class="container">
     <div class="add-item">
-      <button>添加</button>
-      <input type="text" class="add-input">
+      <button on-click="addItem(itemName)">添加</button>
+      <input type="text" class="add-input" value="{= itemName =}">
     </div>
-    <table>
+    <table border="1">
       <tr>
         <th>姓名</th>
         <th>审核状态</th>
         <th>操作</th>
       </tr>
-      <tr s-for="item in itemList">
-        <th>{{item.name}}</th>
-        <th>{{item.checkState}}</th>
-        <th>
-          <button>删除</button>
-          <!-- <button>审核</button> -->
-        </th>
+      <tr s-for="item, index in itemList">
+        <td>{{item.name}}</td>
+        <td>{{item.checkState}}</td>
+        <td>
+          <button s-if="{{item.checkState === '合格' || item.checkState === '不合格'}}"
+                  on-click="deleteItem(index)">删除</button>
+          <button s-if="{{item.checkState === '待审核'}}"
+                  on-click="checkItem(index)">审核</button>
+        </td>
       </tr>
     </table>
   </div>
@@ -38,23 +40,67 @@
           {
             name: '王五',
             checkState: '待审核'
+          },
+          {
+            name: '赵六',
+            checkState: '待审核'
+          },
+          {
+            name: '孙七',
+            checkState: '待审核'
           }
-        ]
+        ],
+        itemName: ''
+      };
+    },
+    addItem: function (name) {
+      if (name === '') {
+        return;
+      }
+      this.data.push('itemList', {
+        name: name,
+        checkState: '待审核'
+      });
+      this.data.set('itemName', '');
+    },
+    deleteItem: function (index) {
+      // 不知道为啥使用 remove 只能删掉前两个
+      this.data.removeAt('itemList', index);
+    },
+    checkItem: function (index) {
+      this.data.set('index', index);
+
+      let r = confirm('合格?');
+      if (r) {
+        this.data.set('itemList[index].checkState', '合格');
+      } else {
+        this.data.set('itemList[index].checkState', '不合格');
       }
     }
   }
 </script>
 
 <style>
+  .add-item {
+    margin-bottom: 10px;
+  }
   .add-input {
     width: 0;
     border: none;
-    transition: width 0.5s ease;
     margin-left: 5px;
   }
-
   .add-item:hover .add-input {
-    width: 80px;
+    width: 120px;
     border: 1px solid #ccc;
+    transition: width 0.5s ease;
+  }
+  table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  th,
+  td {
+    padding: 10px;
   }
 </style>
