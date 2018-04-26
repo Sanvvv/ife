@@ -30,6 +30,7 @@
     },
     clean: function () {
       this.data.set('message', {});
+      this.data.set('age', '');
     },
     changeAge: function (age) {
       this.data.set('message.age', Number(age));
