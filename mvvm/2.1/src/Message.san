@@ -1,0 +1,42 @@
+<template>
+  <div>
+    <div class="message-input">
+      <input type="text" value="{= message.name =}">
+      <input type="number" value="{= age =}" on-input="changeAge(age)">
+      <input type="text" value="{= message.des =}">
+    </div>
+    <div class="message-button">
+      <span>信息：</span>
+      <button on-click="clean()">移除信息</button>
+    </div>
+    <div class="message-list">
+      <div>姓名：{{message.name}}</div>
+      <div>年龄：{{message.age}}</div>
+      <div>简介：{{message.des}}</div>
+    </div>
+  </div>
+</template>
+
+<script>
+  import {DataTypes} from 'san'
+
+  export default {
+    dataTypes: {
+      message: DataTypes.shape({
+        name: DataTypes.string,
+        age: DataTypes.number,
+        des: DataTypes.string
+      })
+    },
+    clean: function () {
+      this.data.set('message', {});
+    },
+    changeAge: function (age) {
+      this.data.set('message.age', Number(age));
+    }
+  }
+</script>
+
+<style>
+  
+</style>

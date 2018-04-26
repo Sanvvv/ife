@@ -1,0 +1,60 @@
+<template>
+  <div class="container">
+    <div class="add-item">
+      <button>添加</button>
+      <input type="text" class="add-input">
+    </div>
+    <table>
+      <tr>
+        <th>姓名</th>
+        <th>审核状态</th>
+        <th>操作</th>
+      </tr>
+      <tr s-for="item in itemList">
+        <th>{{item.name}}</th>
+        <th>{{item.checkState}}</th>
+        <th>
+          <button>删除</button>
+          <!-- <button>审核</button> -->
+        </th>
+      </tr>
+    </table>
+  </div>
+</template>
+
+<script>
+  export default {
+    initData: function () {
+      return {
+        itemList: [
+          {
+            name: '张三',
+            checkState: '合格'
+          },
+          {
+            name: '李四',
+            checkState: '不合格'
+          },
+          {
+            name: '王五',
+            checkState: '待审核'
+          }
+        ]
+      }
+    }
+  }
+</script>
+
+<style>
+  .add-input {
+    width: 0;
+    border: none;
+    transition: width 0.5s ease;
+    margin-left: 5px;
+  }
+
+  .add-item:hover .add-input {
+    width: 80px;
+    border: 1px solid #ccc;
+  }
+</style>
